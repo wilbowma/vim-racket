@@ -7,23 +7,31 @@ setl lispwords+=module,module*,module+,parameterize,let-values,let*-values,letre
 setl lispwords+=define-values,opt-lambda,case-lambda,syntax-rules,with-syntax,syntax-case,syntax-parse
 setl lispwords+=define-signature,unit,unit/sig,compund-unit/sig,define-values/invoke-unit/sig
 setl lispwords+=define-opt/c
+setl lispwords+=define,define-syntax,lambda
+setl lispwords+=let,let*,letrec
+setl lispwords+=unless,when
+setl lispwords+=struct-copy
 
 " kanren
 setl lispwords+=fresh,run,run*,project,conde,condu
 
 " loops
 setl lispwords+=for,for/list,for/fold,for*,for*/list,for*/fold,for/or,for/and
-setl lispwords+=for/hash,for/sum,for/flvector,for*/flvector,for/vector
+setl lispwords+=for/hash,for/sum,for/flvector,for*/flvector,for/vector,for/first
 
 setl lispwords+=match,match*,match/values,define/match,match-lambda,match-lambda*,match-lambda**
 setl lispwords+=match-let,match-let*,match-let-values,match-let*-values
 setl lispwords+=match-letrec,match-define,match-define-values
 setl lisp
 
+" Cur
+setl lispwords+=define-tactic,define-theorem
+
 " Enable auto begin new comment line when continuing from an old comment line
 setl comments+=:;
 setl formatoptions+=r
 
+setl comments+=sl:#\|,mb:\ \|,elx:\ \|#
 setl makeprg=raco\ make\ --\ %
 
 " Simply setting keywordprg like this works:
@@ -33,7 +41,7 @@ setl makeprg=raco\ make\ --\ %
 " We avoid the annoyance of having to hit enter by remapping K directly.
 nnoremap <buffer> K :silent !raco docs <cword><cr>:redraw!<cr>
 
-" For the visual mode K mapping, it's slightly more convoluted to get the 
+" For the visual mode K mapping, it's slightly more convoluted to get the
 " selected text:
 function! s:Racket_visual_doc()
   try
