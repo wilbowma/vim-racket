@@ -7,10 +7,15 @@ setl lispwords+=module,module*,module+,parameterize,let-values,let*-values,letre
 setl lispwords+=define-values,opt-lambda,case-lambda,syntax-rules,with-syntax,syntax-case,syntax-parse
 setl lispwords+=define-signature,unit,unit/sig,compund-unit/sig,define-values/invoke-unit/sig
 setl lispwords+=define-opt/c
-setl lispwords+=define,define-syntax,lambda
+setl lispwords+=define,lambda
+setl lispwords+=define-syntax-rule,define-syntax
 setl lispwords+=let,let*,letrec
 setl lispwords+=unless,when
 setl lispwords+=struct-copy
+setl lispwords+=only-in,rename-in,rename-out
+
+" redex
+setl lispwords+=define-language,define-judgment-form,define-metafunction,define-extended-language,reduction-relation
 
 " kanren
 setl lispwords+=fresh,run,run*,project,conde,condu
@@ -25,7 +30,7 @@ setl lispwords+=match-letrec,match-define,match-define-values
 setl lisp
 
 " Cur
-setl lispwords+=define-tactic,define-theorem
+setl lispwords+=define-tactic,define-theorem,typeclass,impl
 
 " Enable auto begin new comment line when continuing from an old comment line
 setl comments+=:;
